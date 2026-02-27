@@ -1,6 +1,5 @@
 package thread04;
 
-
 public class Risorsa {
     private int val;
     private boolean disponibile = false;
@@ -30,5 +29,4 @@ public class Risorsa {
         System.out.println(Thread.currentThread().getName() + " ha prodotto " + val);
         notify();
     }
-
 }
