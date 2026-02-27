@@ -1,19 +1,19 @@
-# Java Producer-Consumer Pattern
+# Java Threads: Producer Consumer
 
-Implementazione classica del problema del **Produttore-Consumatore** utilizzando il multithreading in Java.
+Progetto Java per la gestione di una risorsa condivisa tramite il pattern Produttore-Consumatore.
 
-## ⚙️ Architettura del Progetto
-Il progetto dimostra la comunicazione tra thread attraverso una risorsa condivisa, gestendo i problemi di sincronizzazione.
+## Descrizione
+Il programma simula lo scambio di dati tra entità diverse utilizzando un buffer monitorato, garantendo che i consumatori non prelevino dati se la risorsa è vuota e i produttori non ne inseriscano se è piena.
 
 
 
-### Componenti principali:
-* **Risorsa**: Funge da buffer monitorato. Utilizza i metodi `wait()` per sospendere i thread quando la risorsa è piena/vuota e `notify()` per risvegliarli.
-* **Produttore**: Genera valori casuali e li deposita nella risorsa.
-* **Consumatore**: Preleva i valori dalla risorsa e li stampa a video.
-* **Start**: Classe principale che orchestra l'avvio e l'arresto controllato di 2 produttori e 4 consumatori.
+## Funzionamento dei Thread:
+* **Thread Produttore**: Genera valori casuali e li inserisce nella risorsa condivisa.
+* **Thread Consumatore**: Preleva i dati dalla risorsa e li visualizza in console.
 
-## Concetti Chiave
-* **Monitor & Sincronizzazione**: Uso della keyword `synchronized`.
-* **Thread Lifecycle**: Gestione dell'avvio (`start`) e della terminazione pulita tramite un flag `running`.
-* **Wait/Notify**: Coordinamento degli stati della risorsa per evitare *race conditions*.
+Il programma utilizza i metodi `.wait()` e `.notify()` per coordinare l'accesso alla risorsa ed evitare conflitti di sincronizzazione.
+
+## Tecnologie e Concetti
+* **Java Core**: Utilizzo della classe `Thread` e della keyword `synchronized`.
+* **Sincronizzazione**: Gestione della comunicazione inter-thread (Wait/Notify).
+* **Controllo di Flusso**: Utilizzo di flag booleani per l'arresto controllato dei thread dopo un tempo prestabilito.
