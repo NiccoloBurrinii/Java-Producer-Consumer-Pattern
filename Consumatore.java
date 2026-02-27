@@ -1,6 +1,5 @@
 package thread04;
 
-
 public class Consumatore extends Thread {
     private Risorsa r;
     private int val;
@@ -24,5 +23,4 @@ public class Consumatore extends Thread {
             }
         }
     }
-
 }
